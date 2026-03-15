@@ -1,15 +1,15 @@
-import { Text, View } from "react-native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import EmployeeForm from "./components/EmployeeForm";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 
+const Stack = createNativeStackNavigator();
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name="SignIn" component={SignIn} />
+      <Stack.Screen name="SignUp" component={SignUp} />
+      <Stack.Screen name="EmployeeForm" component={EmployeeForm} />
+    </Stack.Navigator>
   );
 }
